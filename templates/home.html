@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Головна</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    {% include '_navigation.html' %}
+    <h1>Вітаємо у нашому ресторані!</h1>
+    {% if user.nickname %}
+    {{user.nickname}} <a href="/logout">Вихід</a>
+    {% if user.nickname =="admin"%}
+    <a href="/add_position">Додати страву</a>
+    {% endif %}
+    {% else %}
+    <a href="/login">Вхід</a> | <a href="/register">Реєстрація</a>
+    {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<nav>
+    <a href="{{url_for('menu')}}">Menu</a>
+    <a href="{{url_for('create_order')}}">Create order</a>
+</nav>
+{%if user and user.nickname == "Admin"%}
+    {% include '_admin_navigation.html' %}
+    {% endif %}

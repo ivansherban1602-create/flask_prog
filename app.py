@@ -126,7 +126,7 @@ def logout():
 @app.route("/add_position", methods=['GET', 'POST'])
 @login_required
 def add_position():
-    if current_user.nickname != 'admin':
+    if current_user.nickname != 'Admin':
         return redirect(url_for('home'))
 
     if request.method == "POST":
